@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vêtements - Prestige Draria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>PRESTIGE</h1>
+                <p>DRARIA</p>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="shoes.html" class="nav-link">Chaussures</a>
+                <a href="clothes.html" class="nav-link active">Vêtements</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title fade-in">Vêtements pour Enfants 👕</h1>
+            <p class="page-subtitle fade-in-delay-1">Collection Complète - Tailles XS à XL</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="clothes-grid">
+                <!-- T-Shirts -->
+                <div class="product-card" data-product-id="cloth1">
+                    <div class="product-image">
+                        <span class="product-emoji">👕</span>
+                        <div class="product-badge">Nouveau</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>T-Shirt Classique</h3>
+                        <p class="product-desc">100% coton, confortable au quotidien</p>
+                        <p class="product-price">3200 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('T-Shirt Classique', 3200, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pantalon -->
+                <div class="product-card" data-product-id="cloth2">
+                    <div class="product-image">
+                        <span class="product-emoji">👖</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalon Jeans Kids</h3>
+                        <p class="product-desc">Denim de qualité, résistant</p>
+                        <p class="product-price">4500 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Pantalon Jeans Kids', 4500, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hoodie -->
+                <div class="product-card" data-product-id="cloth3">
+                    <div class="product-image">
+                        <span class="product-emoji">🧥</span>
+                        <div class="product-badge bestseller">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Hoodie Premium</h3>
+                        <p class="product-desc">Chaud et stylé pour l'hiver</p>
+                        <p class="product-price">5500 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Hoodie Premium', 5500, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Short -->
+                <div class="product-card" data-product-id="cloth4">
+                    <div class="product-image">
+                        <span class="product-emoji">🩳</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Short Sport</h3>
+                        <p class="product-desc">Parfait pour l'été et le sport</p>
+                        <p class="product-price">3000 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Short Sport', 3000, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sweatshirt -->
+                <div class="product-card" data-product-id="cloth5">
+                    <div class="product-image">
+                        <span class="product-emoji">👚</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sweatshirt Confort</h3>
+                        <p class="product-desc">Doux et agréable à porter</p>
+                        <p class="product-price">4200 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Sweatshirt Confort', 4200, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Polo -->
+                <div class="product-card" data-product-id="cloth6">
+                    <div class="product-image">
+                        <span class="product-emoji">👔</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Polo Élégant</h3>
+                        <p class="product-desc">Style classique pour occasions</p>
+                        <p class="product-price">3800 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Polo Élégant', 3800, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Veste -->
+                <div class="product-card" data-product-id="cloth7">
+                    <div class="product-image">
+                        <span class="product-emoji">🧥</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Veste Légère</h3>
+                        <p class="product-desc">Protection et style</p>
+                        <p class="product-price">5200 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Veste Légère', 5200, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Jogging -->
+                <div class="product-card" data-product-id="cloth8">
+                    <div class="product-image">
+                        <span class="product-emoji">👖</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Ensemble Jogging</h3>
+                        <p class="product-desc">Confort maximum pour le sport</p>
+                        <p class="product-price">6000 DZD</p>
+                        <div class="product-controls">
+                            <label>Taille:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="XS">XS (3-4 ans)</option>
+                                <option value="S">S (5-6 ans)</option>
+                                <option value="M">M (7-8 ans)</option>
+                                <option value="L">L (9-10 ans)</option>
+                                <option value="XL">XL (11-12 ans)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Ensemble Jogging', 6000, 'cloth')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Panier</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Votre panier est vide</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">0 DZD</span>
+            </div>
+            <button class="btn btn-checkout" onclick="checkout()">Commander</button>
+        </div>
+    </div>
+
+    <!-- Cart Button -->
+    <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Prestige Draria. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

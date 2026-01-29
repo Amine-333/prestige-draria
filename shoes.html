@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaussures - Prestige Draria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>PRESTIGE</h1>
+                <p>DRARIA</p>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="shoes.html" class="nav-link active">Chaussures</a>
+                <a href="clothes.html" class="nav-link">Vêtements</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title fade-in">Chaussures pour Enfants 👟</h1>
+            <p class="page-subtitle fade-in-delay-1">Collection Premium - Pointures 26 à 36</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="shoes-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-product-id="shoe1">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                        <div class="product-badge">Nouveau</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Baskets Sport Enfant</h3>
+                        <p class="product-desc">Confortables et élégantes pour tous les jours</p>
+                        <p class="product-price">4500 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Baskets Sport Enfant', 4500, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-product-id="shoe2">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaussures Casual Kids</h3>
+                        <p class="product-desc">Style décontracté pour l'école</p>
+                        <p class="product-price">3800 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Chaussures Casual Kids', 3800, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-product-id="shoe3">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                        <div class="product-badge bestseller">Best Seller</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sneakers Premium</h3>
+                        <p class="product-desc">Qualité supérieure, design moderne</p>
+                        <p class="product-price">5200 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Sneakers Premium', 5200, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-product-id="shoe4">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Chaussures Sport Pro</h3>
+                        <p class="product-desc">Parfaites pour le sport et les jeux</p>
+                        <p class="product-price">4200 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Chaussures Sport Pro', 4200, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card" data-product-id="shoe5">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Baskets Confort</h3>
+                        <p class="product-desc">Légères et respirantes</p>
+                        <p class="product-price">3500 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Baskets Confort', 3500, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card" data-product-id="shoe6">
+                    <div class="product-image">
+                        <span class="product-emoji">👟</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sneakers Style</h3>
+                        <p class="product-desc">Tendance et élégantes</p>
+                        <p class="product-price">4800 DZD</p>
+                        <div class="product-controls">
+                            <label>Pointure:</label>
+                            <select class="size-select">
+                                <option value="">Choisir...</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                <option value="32">32</option>
+                                <option value="33">33</option>
+                                <option value="34">34</option>
+                                <option value="35">35</option>
+                                <option value="36">36</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-add-cart" onclick="addToCart('Sneakers Style', 4800, 'shoe')">
+                            Ajouter au Panier
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Panier</h3>
+            <button class="close-cart" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Votre panier est vide</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">0 DZD</span>
+            </div>
+            <button class="btn btn-checkout" onclick="checkout()">Commander</button>
+        </div>
+    </div>
+
+    <!-- Cart Button -->
+    <button class="cart-btn" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Prestige Draria. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

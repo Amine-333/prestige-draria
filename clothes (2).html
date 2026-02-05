@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vêtements pour Enfants - Prestige Draria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #2c2c2c 0%, #6c6c6c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border: 1px solid #d0d0d0;
+        }
+
+        .page-title {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .page-title h1 {
+            color: #2c2c2c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border: 1px solid #d0d0d0;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product-info h3 {
+            color: #2c2c2c;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 15px 0;
+        }
+
+        .product-sizes {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .size-badge {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e5e5e5 100%);
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #333;
+            border: 1px solid #d0d0d0;
+        }
+
+        .order-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .order-btn:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border: 1px solid #e0e0e0;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modal-header h2 {
+            color: #2c2c2c;
+            font-size: 1.8em;
+        }
+
+        .close-btn {
+            font-size: 2em;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d0d0d0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a4a4a;
+            box-shadow: 0 0 0 2px rgba(74, 74, 74, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #2c2c2c 0%, #3a3a3a 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer a {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">PRESTIGE DRARIA</div>
+                <nav>
+                    <a href="index.html">🏠 Accueil</a>
+                    <a href="shoes.html">👟 Chaussures</a>
+                    <a href="clothes.html">👕 Vêtements</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="page-title">
+            <h1>👕 Vêtements pour Enfants</h1>
+            <p>Collections tendances et confortables pour vos petits</p>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+
+        <footer>
+            <p>📍 Draria, Alger | 📞 <a href="tel:0797416501">0797 41 65 01</a></p>
+            <p style="margin-top: 10px;">© 2026 Prestige Draria. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Commander ce Vêtement</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="successMessage" class="success-message">
+                ✓ Votre commande a été envoyée avec succès!
+            </div>
+            <form id="orderForm">
+                <input type="hidden" id="productName" name="productName">
+                <input type="hidden" id="productPrice" name="productPrice">
+                
+                <div class="form-group">
+                    <label>Produit sélectionné:</label>
+                    <input type="text" id="displayProductName" readonly style="background: #f5f5f5;">
+                </div>
+
+                <div class="form-group">
+                    <label>Prix:</label>
+                    <input type="text" id="displayProductPrice" readonly style="background: #f5f5f5;">
+                </div>
+
+                <div class="form-group">
+                    <label for="size">Taille: *</label>
+                    <select id="size" name="size" required>
+                        <option value="">Choisir une taille</option>
+                        <option value="XS">XS (2-3 ans)</option>
+                        <option value="S">S (4-5 ans)</option>
+                        <option value="M">M (6-7 ans)</option>
+                        <option value="L">L (8-9 ans)</option>
+                        <option value="XL">XL (10-12 ans)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantité: *</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Nom complet: *</label>
+                    <input type="text" id="customerName" name="customerName" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Téléphone: *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="0797 41 65 01">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Adresse de livraison: *</label>
+                    <textarea id="address" name="address" required placeholder="Votre adresse complète à Draria"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notes supplémentaires:</label>
+                    <textarea id="notes" name="notes" placeholder="Couleur préférée, instructions spéciales..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">📦 Confirmer la Commande</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ⚙️ GOOGLE SHEETS CONFIGURATION
+        // IMPORTANT: Replace this URL with your Google Apps Script Web App URL
+        const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+        
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Ensemble T-shirt & Short Sportif",
+                description: "Ensemble confortable pour activités sportives",
+                price: "3500 DZD",
+                emoji: "🏃",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Matière respirante, parfait pour l'été"
+            },
+            {
+                id: 2,
+                name: "Pull Capuche Casual",
+                description: "Sweat à capuche doux et tendance",
+                price: "4500 DZD",
+                emoji: "🧥",
+                sizes: ["S", "M", "L", "XL"],
+                details: "100% coton, idéal pour l'automne"
+            },
+            {
+                id: 3,
+                name: "Jean Denim Enfant",
+                description: "Jean classique résistant",
+                price: "4000 DZD",
+                emoji: "👖",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Coupe moderne, très durable"
+            },
+            {
+                id: 4,
+                name: "Veste Légère Printemps",
+                description: "Veste coupe-vent imperméable",
+                price: "5500 DZD",
+                emoji: "🧥",
+                sizes: ["S", "M", "L", "XL"],
+                details: "Protection contre la pluie et le vent"
+            },
+            {
+                id: 5,
+                name: "Polo Classic Enfant",
+                description: "Polo élégant pour occasions spéciales",
+                price: "3200 DZD",
+                emoji: "👔",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Parfait pour l'école ou les fêtes"
+            },
+            {
+                id: 6,
+                name: "Short Sport Respirant",
+                description: "Short léger pour activités",
+                price: "2800 DZD",
+                emoji: "🩳",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Tissu quick-dry, très confortable"
+            },
+            {
+                id: 7,
+                name: "Ensemble Jogging Complet",
+                description: "Survêtement confortable 2 pièces",
+                price: "5000 DZD",
+                emoji: "🏃‍♂️",
+                sizes: ["S", "M", "L", "XL"],
+                details: "Pantalon + veste assortis"
+            },
+            {
+                id: 8,
+                name: "T-shirt Graphique Tendance",
+                description: "T-shirt avec designs modernes",
+                price: "2500 DZD",
+                emoji: "👕",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Imprimés originaux et colorés"
+            },
+            {
+                id: 9,
+                name: "Chemise Casual Enfant",
+                description: "Chemise à manches longues",
+                price: "3800 DZD",
+                emoji: "👔",
+                sizes: ["S", "M", "L", "XL"],
+                details: "Coton premium, facile à repasser"
+            },
+            {
+                id: 10,
+                name: "Ensemble Pyjama Doux",
+                description: "Pyjama confortable pour la nuit",
+                price: "3000 DZD",
+                emoji: "🌙",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Tissu ultra-doux pour un bon sommeil"
+            },
+            {
+                id: 11,
+                name: "Gilet Sans Manches",
+                description: "Gilet chaud pour l'hiver",
+                price: "4200 DZD",
+                emoji: "🦺",
+                sizes: ["S", "M", "L", "XL"],
+                details: "Rembourrage léger, très chaud"
+            },
+            {
+                id: 12,
+                name: "Pantalon Cargo Multipoches",
+                description: "Pantalon pratique avec poches",
+                price: "3900 DZD",
+                emoji: "👖",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                details: "Style urbain, très fonctionnel"
+            }
+        ];
+
+        // Load products
+        function loadProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">${product.emoji}</div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.description}</p>
+                        <p><strong>Détails:</strong> ${product.details}</p>
+                        <div class="product-price">${product.price}</div>
+                        <div class="product-sizes">
+                            ${product.sizes.map(size => `<span class="size-badge">${size}</span>`).join('')}
+                        </div>
+                        <button class="order-btn" onclick="openOrderModal('${product.name}', '${product.price}')">
+                            🛒 Commander Maintenant
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Modal functions
+        function openOrderModal(productName, productPrice) {
+            document.getElementById('productName').value = productName;
+            document.getElementById('productPrice').value = productPrice;
+            document.getElementById('displayProductName').value = productName;
+            document.getElementById('displayProductPrice').value = productPrice;
+            document.getElementById('orderModal').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function closeModal() {
+            document.getElementById('orderModal').style.display = 'none';
+            document.getElementById('orderForm').reset();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                type: 'clothes',
+                productName: document.getElementById('productName').value,
+                productPrice: document.getElementById('productPrice').value,
+                size: document.getElementById('size').value,
+                quantity: document.getElementById('quantity').value,
+                customerName: document.getElementById('customerName').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                notes: document.getElementById('notes').value,
+                timestamp: new Date().toLocaleString('fr-FR')
+            };
+
+            try {
+                // Send to Google Sheets
+                if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                }
+                
+                // Also save to localStorage as backup
+                let orders = JSON.parse(localStorage.getItem('prestigeOrders') || '[]');
+                orders.push(formData);
+                localStorage.setItem('prestigeOrders', JSON.stringify(orders));
+
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('orderForm').reset();
+                
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur lors de l\'envoi de la commande. Veuillez réessayer.');
+            }
+        });
+
+        // Initialize
+        loadProducts();
+    </script>
+</body>
+</html>
